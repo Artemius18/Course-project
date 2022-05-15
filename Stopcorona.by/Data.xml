@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+
+<data>
+
+<firstvaccination>4000000 <br> Вакцинация <br>первым <br>компонентом</firstvaccination>
+<secondvaccination>3000000 <br>Вакцинация <br>первым <br>компонентом </secondvaccination>
+<hospitalized>1000 <br>Госпитализировано</hospitalized>
+<recovered>10000 <br>Выздоровело</recovered>
+<revealed>1000<br> Выявлено</revealed> 
+
+</data>

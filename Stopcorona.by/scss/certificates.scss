@@ -1,0 +1,129 @@
+$maincolor: #0011AE;
+$fsize: 16px;
+@mixin flexible() {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin main-heading() {
+    color: $maincolor;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+//контейнер
+.wrapper {
+    font-size: $fsize;
+    font-family: Roboto;
+    max-width: 1080px;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .main {
+        //контент
+        margin-top: 50px;
+        flex: 1 1 auto;
+        //Вопросы 
+        .main-questions {
+            // Заголовок "Часто задаваемые вопросы" 
+            @include main-heading();
+        }
+        .faq {
+            //Часто задаваемые вопросы и ответы на них
+            .faq-item {
+                border-bottom: 1px solid $maincolor;
+                margin-bottom: 5px;
+                .faq-title {
+                    font-weight: 500;
+                    font-size: 20px;
+                    padding: 10px;
+                    display: flex;
+                    cursor: pointer;
+                }
+                .faq-title:hover {
+                    background: #deebff;
+                    transition: .3s ease-out;
+                }
+                .faq-text {
+                    font-size: $fsize;
+                    display: none;
+                    padding: 10px;
+                }
+                .faq-input:checked+.faq-title {
+                    background: #deebff;
+                }
+                .faq-input:checked~.faq-text {
+                    display: flex;
+                }
+            }
+        }
+        .certificates-heading {
+            //Заголовок "Сертификаты" 
+            @include main-heading();
+            margin-top: 35px;
+        }
+        .certificates-container {
+            // Сертификаты
+            flex-wrap: wrap;
+            @include flexible();
+            img {
+                max-width: 300px;
+                max-height: 200px;
+            }
+            .sertif-text {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .last {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        max-width: 750px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding: 15px;
+        .main {
+            .faq {
+                .faq-item {
+                    .faq-title:hover {
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .wrapper {
+        .main {
+            .certificates-container {
+                justify-content: center;
+                overflow: hidden;
+                .sertif-text {
+                    text-align: center;
+                    font-size: 14px;
+                }
+            }
+            .certificates-heading {
+                font-size: 30px;
+            }
+        }
+    }
+}

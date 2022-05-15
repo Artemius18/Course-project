@@ -1,0 +1,85 @@
+$maincolor: #0011AE;
+@mixin flexible() {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer {
+    @include flexible();
+    margin-top: 40px;
+    padding: 55px 30px 55px 30px;
+    align-items: center;
+    height: 230px;
+    background-color: rgba(#52B7FF, 0.18);
+    .social-networks {
+        .icons-footer-text {
+            //Текст "Мы в соцсетях"
+            text-align: center;
+            color: $maincolor;
+            font-size: 20px;
+        }
+    }
+    .all-rights-reserved {
+        //Текст "Все права защищены"
+        text-align: center;
+        font-size: 20px;
+        margin-top: 25px;
+        color: $maincolor;
+    }
+    .hotline-footer-text {
+        //Текст "Единая горячая линия"
+        color: $maincolor;
+        font-size: 20px;
+    }
+    .hotline-footer-number {
+        color: $maincolor;
+        font-weight: 500;
+    }
+}
+
+//===============================================================
+@media (max-width: 1080px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        padding: 0 15px 0 15px;
+        .social-networks {
+            visibility: hidden;
+        }
+        .hotline-footer-text {
+            visibility: hidden;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 0 15px 0 15px;
+        footer {
+            .footer-img {
+                width: 220px;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .wrapper {
+        padding: 0 15px 0 15px;
+        footer {
+            .footer-img {
+                width: 200px;
+            }
+        }
+    }
+}

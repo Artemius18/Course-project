@@ -1,0 +1,95 @@
+$maincolor: #0011AE;
+$fsize: 16px;
+@mixin flexible() {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin heading() {
+    color: $maincolor;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+//контейнер
+.wrapper {
+    font-size: $fsize;
+    font-family: Roboto;
+    max-width: 1080px;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .main {
+        //контент
+        margin-top: 30px;
+        flex: 1 1 auto;
+        .reg-for-vaccination {
+            @include heading();
+        }
+        .vac-form {
+            //Форма
+            display: flex;
+            justify-content: center;
+            form {
+                input,
+                select {
+                    //Телефон, почта и имя
+                    padding: 5px;
+                    margin-bottom: 15px;
+                    width: 100%;
+                    display: block;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                }
+                .buttons {
+                    button {
+                        //Кнопки Отправить и очистить
+                        cursor: pointer;
+                        background: rgb(233, 233, 233);
+                        margin-top: 15px;
+                        border: 1px solid black;
+                        padding: 10px 25px 10px 25px;
+                        border-radius: 5px;
+                    }
+                    button:hover {
+                        background: rgb(252, 252, 252);
+                        box-shadow: 0px 0px 20px 2px rgba(34, 60, 80, 0.2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        max-width: 750px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding: 15px;
+        .main {
+            .vac-form {
+                form {
+                    .buttons {
+                        button:hover {
+                            box-shadow: none;
+                            background: rgb(233, 233, 233)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

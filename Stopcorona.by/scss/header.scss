@@ -1,0 +1,221 @@
+$maincolor: #0011AE;
+$orangecolor: #C35E00;
+$fsize: 16px;
+@mixin flexible() {
+    display: flex;
+    justify-content: space-between;
+}
+
+//шапка 
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    .header-icons-and-text {
+        @include flexible();
+        .align-right {
+            //Элементы навигационного меню, которые выравнены по правому краю
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .hotline-text {
+                //Единая горячая линия
+                color: $orangecolor;
+                font-weight: 500;
+            }
+            .hotline-number {
+                //Номер единой горячей линии
+                color: $orangecolor;
+                font-weight: 500;
+                font-size: 20px;
+            }
+            .icons {
+                .left-line {
+                    //Левая линия у иконок соцсетей
+                    padding-left: 15px;
+                    border-left: 1px solid $maincolor;
+                }
+                .right-line {
+                    //Правая линия у иконок соцсетей
+                    padding-right: 15px;
+                    border-right: 1px solid $maincolor;
+                }
+            }
+            .soc-net:hover {
+                opacity: 0.75;
+            }
+            .official-information {
+                //Официальная информация о коронавирусе в Беларуси
+                font-weight: 400;
+                font-size: 12px;
+                color: #656565;
+            }
+            //Меню бургер
+            .menu-burger {
+                display: none;
+                .mobile-menu {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    &__btn {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 35px;
+                        height: 30px;
+                        cursor: pointer;
+                        transition: .4s;
+                    }
+                    &__icon {
+                        display: block;
+                        position: relative;
+                        background: rgb(0, 0, 0);
+                        width: 90%;
+                        height: 4px;
+                        &::after,
+                        &::before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            background: rgb(0, 0, 0);
+                            width: 100%;
+                            height: 4px;
+                            transition: .4s;
+                        }
+                        &::after {
+                            top: 8px;
+                        }
+                        &::before {
+                            bottom: 8px;
+                        }
+                    }
+                    &__container {
+                        background-color: rgb(219, 219, 219);
+                        position: fixed;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: 57px;
+                        left: 0;
+                        right: 0;
+                        height: 0;
+                        transition-duration: .5s;
+                        transition-delay: .2s;
+                        overflow: hidden;
+                    }
+                    &__item {
+                        font-size: 18px;
+                        padding-bottom: 15px;
+                        &__text {
+                            font-size: 14px;
+                        }
+                    }
+                    &__link {
+                        text-decoration: none;
+                        color: $maincolor;
+                    }
+                    &__checkbox {
+                        &:checked~ {
+                            .mobile-menu {
+                                &__container {
+                                    height: 50%;
+                                }
+                                &__btn {
+                                    .mobile-menu__icon {
+                                        background: transparent;
+                                        &::before,
+                                        &::after {
+                                            top: 0;
+                                        }
+                                        &::after {
+                                            transform: rotate(-45deg);
+                                        }
+                                        &::before {
+                                            transform: rotate(45deg);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .underline {
+        //Горизонтальная линия
+        margin-bottom: 15px;
+        border-bottom: 1px solid gray;
+    }
+    //Кнопки навигации
+    .navigation-menu {
+        @include flexible();
+        .buttons {
+            color: $maincolor;
+            float: left;
+            padding: 10px 35px 10px 35px;
+            background-color: #deebff;
+            list-style-type: none;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .buttons:hover {
+            transition: background-color 0.5s ease;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 20px 2px rgba(34, 60, 80, 0.2);
+        }
+    }
+    .underline-second {
+        //Вторая горизонтальная линия
+        margin-top: 15px;
+        border-bottom: 1px solid gray;
+    }
+}
+
+@media (max-width: 1080px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        max-width: 750px;
+        .header-icons-and-text {
+            .img-loop {
+                display: none;
+            }
+            .align-right {
+                .hotline {
+                    display: none;
+                }
+                .icons {
+                    display: none;
+                }
+                .official-information {
+                    display: none;
+                }
+                .menu-burger {
+                    display: flex;
+                }
+            }
+        }
+        .underline {
+            display: none;
+        }
+        .navigation-menu {
+            display: none;
+        }
+        .underline-second {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        padding: 0 15px 0 15px;
+    }
+}

@@ -1,0 +1,260 @@
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+header .header-icons-and-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header-icons-and-text .align-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header .header-icons-and-text .align-right .hotline-text {
+  color: #C35E00;
+  font-weight: 500;
+}
+
+header .header-icons-and-text .align-right .hotline-number {
+  color: #C35E00;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+header .header-icons-and-text .align-right .icons .left-line {
+  padding-left: 15px;
+  border-left: 1px solid #0011AE;
+}
+
+header .header-icons-and-text .align-right .icons .right-line {
+  padding-right: 15px;
+  border-right: 1px solid #0011AE;
+}
+
+header .header-icons-and-text .align-right .soc-net:hover {
+  opacity: 0.75;
+}
+
+header .header-icons-and-text .align-right .official-information {
+  font-weight: 400;
+  font-size: 12px;
+  color: #656565;
+}
+
+header .header-icons-and-text .align-right .menu-burger {
+  display: none;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__icon {
+  display: block;
+  position: relative;
+  background: black;
+  width: 90%;
+  height: 4px;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__icon::after, header .header-icons-and-text .align-right .menu-burger .mobile-menu__icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: black;
+  width: 100%;
+  height: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__icon::after {
+  top: 8px;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__icon::before {
+  bottom: 8px;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__container {
+  background-color: #dbdbdb;
+  position: fixed;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 57px;
+  left: 0;
+  right: 0;
+  height: 0;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+  overflow: hidden;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__item {
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__item__text {
+  font-size: 14px;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__link {
+  text-decoration: none;
+  color: #0011AE;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__checkbox:checked ~ .mobile-menu__container {
+  height: 50%;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon {
+  background: transparent;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before, header .header-icons-and-text .align-right .menu-burger .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+  top: 0;
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+header .header-icons-and-text .align-right .menu-burger .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .underline {
+  margin-bottom: 15px;
+  border-bottom: 1px solid gray;
+}
+
+header .navigation-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .navigation-menu .buttons {
+  color: #0011AE;
+  float: left;
+  padding: 10px 35px 10px 35px;
+  background-color: #deebff;
+  list-style-type: none;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+header .navigation-menu .buttons:hover {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 20px 2px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 20px 2px rgba(34, 60, 80, 0.2);
+}
+
+header .underline-second {
+  margin-top: 15px;
+  border-bottom: 1px solid gray;
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    max-width: 750px;
+  }
+  .wrapper .header-icons-and-text .img-loop {
+    display: none;
+  }
+  .wrapper .header-icons-and-text .align-right .hotline {
+    display: none;
+  }
+  .wrapper .header-icons-and-text .align-right .icons {
+    display: none;
+  }
+  .wrapper .header-icons-and-text .align-right .official-information {
+    display: none;
+  }
+  .wrapper .header-icons-and-text .align-right .menu-burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .wrapper .underline {
+    display: none;
+  }
+  .wrapper .navigation-menu {
+    display: none;
+  }
+  .wrapper .underline-second {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 0 15px 0 15px;
+  }
+}

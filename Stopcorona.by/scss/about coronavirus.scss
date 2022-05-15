@@ -1,0 +1,158 @@
+$maincolor: #0011AE;
+$fsize: 16px;
+@mixin flexible() {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin main-heading() {
+    color: $maincolor;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+@mixin heading() {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+//контейнер
+.wrapper {
+    font-size: $fsize;
+    font-family: Roboto;
+    max-width: 1080px;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .main {
+        //контент
+        margin-top: 50px;
+        flex: 1 1 auto;
+        .about-coronavirus {
+            //Текст "Все о коронавирусе"
+            text-align: center;
+            @include main-heading();
+        }
+        .main-symptoms {
+            //Текст "Основные симптомы коронавируса"
+            @include heading();
+        }
+        .symptoms {
+            //Блок с симптомами
+            @include flexible();
+            flex-wrap: wrap;
+            img {
+                max-width: 230px;
+                max-height: 130px;
+            }
+            .symp-text {
+                text-align: center;
+                font-size: 14px;
+                margin-top: 15px;
+            }
+        }
+        .rare-symptoms-heading {
+            //Заголовок "Редкие симптомы коронавируса"
+            margin-top: 70px;
+            margin-bottom: 15px;
+            @include heading();
+        }
+        .rare-symptoms {
+            //Блок с редкими симптомами
+            @include flexible();
+            flex-wrap: wrap;
+            img {
+                max-width: 130px;
+                max-height: 130px;
+            }
+            .symp-text {
+                text-align: center;
+                font-size: 14px;
+                margin-top: 15px;
+            }
+        }
+        .how-transmitted {
+            //Заголовок "Как передается Коронавирус?"
+            @include heading();
+            margin-top: 70px;
+            margin-bottom: 50px;
+        }
+        .ways-of-transmission {
+            align-items: center;
+            @include flexible();
+            .how-img {
+                //Картинка человека с самолетом
+                max-width: 470px;
+                max-height: 330px;
+            }
+            ul {
+                li {
+                    //Текст путей передачи
+                    font-size: 14px;
+                    display: inline-flex;
+                    align-items: center;
+                    img {
+                        margin-right: 20px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        max-width: 750px;
+    }
+    .ways-of-transmission {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding: 0 15px 0 15px;
+    }
+    .ways-of-transmission {
+        align-items: center;
+        @include flexible();
+        .how-img {
+            //Картинка человека с самолетом
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main {
+        .symptoms {
+            flex-direction: column;
+            div {
+                text-align: center;
+                .symp-text {
+                    margin: 15px 0 15px 0;
+                }
+            }
+        }
+        .rare-symptoms {
+            flex-direction: column;
+            justify-content: center;
+            div {
+                text-align: center;
+                .symp-text {
+                    margin: 15px 0 15px 0;
+                }
+            }
+        }
+    }
+}
